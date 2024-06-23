@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>獎品兌換系統</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>獎品兌換系統</h1>
+        <input type="number" id="score" placeholder="輸入分數">
+        <button onclick="checkPrize()">兌換獎品</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkPrize() {
+            var score = document.getElementById('score').value;
+            var result = '';
+
+            if (score >= 90) {
+                result = '恭喜！你可以兌換一杯飲料！';
+            } else if (score >= 80) {
+                result = '恭喜！你可以兌換一顆糖果！';
+            } else {
+                result = '恭喜！你可以兌換一枝鉛筆！';
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
